@@ -1268,6 +1268,30 @@ canvas#fx.on{opacity:1}
 @media (max-width:700px){.story-card,.prelude-card{width:98%;padding:14px;max-height:94%}.story-footer{flex-direction:column;align-items:flex-start}.choice-btn{padding:12px 10px}.stat-pill{font-size:.78em}}
 @media (prefers-reduced-motion: reduce){.prelude-screen::before,.story-game::before{animation:none}.choice-btn{transition:none}}
 
+
+/* ═══════════════════════════════════════════════════════════════════
+   POLISH PASS v2 — RELATIONSHIPS, PACING & HEART MINI-GAMES
+   ═══════════════════════════════════════════════════════════════════ */
+.story-game.polished-heart::before{background:radial-gradient(circle at 12% 18%,rgba(255,107,157,.14),transparent 28%),radial-gradient(circle at 85% 22%,rgba(168,230,163,.1),transparent 24%),radial-gradient(circle at 60% 86%,rgba(212,175,55,.08),transparent 36%),repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 1px,transparent 1px 4px);animation:polishedSceneBreath 13s ease-in-out infinite}
+@keyframes polishedSceneBreath{0%,100%{transform:translate3d(0,0,0) scale(1);opacity:.48}45%{transform:translate3d(-1.4%,.8%,0) scale(1.035);opacity:.76}70%{transform:translate3d(.8%,-.6%,0) scale(1.018);opacity:.58}}
+.story-card{scroll-behavior:smooth}
+.story-card::after{content:"";position:absolute;inset:0;border:1px solid rgba(255,255,255,.025);pointer-events:none;mix-blend-mode:screen}
+.story-text .soft{color:#ffd6e4}.story-text .gold{color:var(--gold)}.story-text .green{color:var(--green)}.story-text .quiet{color:#aaa}.story-text .danger{color:#d7a3ff;text-shadow:0 0 10px rgba(185,166,255,.25)}
+.story-chapter-pulse{position:absolute;inset:auto 18px 16px auto;width:84px;height:84px;border-radius:50%;border:1px solid rgba(255,107,157,.22);opacity:.45;pointer-events:none;animation:chapterPulse 5.8s ease-in-out infinite}.story-chapter-pulse::before,.story-chapter-pulse::after{content:"";position:absolute;inset:13px;border-radius:50%;border:1px solid rgba(168,230,163,.16);animation:chapterPulse 7.2s ease-in-out infinite reverse}.story-chapter-pulse::after{inset:29px;border-color:rgba(212,175,55,.2);animation-duration:4.2s}@keyframes chapterPulse{0%,100%{transform:scale(.82);opacity:.18}50%{transform:scale(1.08);opacity:.58}}
+.relationship-board{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,107,157,.16)}
+.rel-chip{position:relative;border:1px solid rgba(255,107,157,.22);background:linear-gradient(90deg,rgba(255,107,157,.052),rgba(168,230,163,.035));padding:8px 9px 7px;min-height:42px;overflow:hidden}.rel-chip strong{font-family:var(--font-crt);font-size:.82rem;letter-spacing:1px;color:var(--pink-bright);font-weight:400}.rel-chip span{display:block;margin-top:3px;color:#777;font-size:.78rem}.rel-meter{position:absolute;left:0;bottom:0;height:2px;background:linear-gradient(90deg,var(--pink),var(--green));width:calc(var(--rel,0) * 1%);box-shadow:0 0 8px rgba(168,230,163,.28);transition:width .45s ease}.rel-chip.warn .rel-meter{background:linear-gradient(90deg,#b9a6ff,var(--red))}.rel-chip.mirror .rel-meter{background:linear-gradient(90deg,var(--blue),var(--gold))}
+.relationship-flash{animation:relFlash .85s ease-out}@keyframes relFlash{0%{box-shadow:0 0 0 rgba(168,230,163,0)}35%{box-shadow:0 0 22px rgba(168,230,163,.22)}100%{box-shadow:0 0 0 rgba(168,230,163,0)}}
+.mini-game{margin-top:18px;border:1px solid rgba(168,230,163,.28);background:linear-gradient(180deg,rgba(168,230,163,.045),rgba(255,107,157,.035));padding:14px;position:relative;box-shadow:inset 0 0 18px rgba(0,0,0,.45),0 0 22px rgba(168,230,163,.06)}
+.mini-game::before{content:"MINI-JEU · CŒUR";position:absolute;top:-9px;left:12px;background:#060606;color:var(--green);font-family:var(--font-crt);font-size:.72rem;letter-spacing:1.8px;padding:0 8px}.mg-title{font-family:var(--font-hand);font-size:clamp(1.08rem,3vw,1.45rem);color:var(--pink-bright);margin-bottom:8px}.mg-desc{font-family:var(--font-serif);font-size:clamp(.92rem,2.25vw,1.1rem);line-height:1.42;color:var(--warm);opacity:.92;margin-bottom:12px}.mg-feedback{min-height:1.4em;color:var(--gold);font-family:var(--font-crt);letter-spacing:.7px;margin-top:10px}.mg-row{display:flex;flex-wrap:wrap;gap:9px}.mg-btn,.fragment,.evidence-card,.witness-card,.line-card,.candle{font-family:var(--font-crt);border:1px solid rgba(255,107,157,.32);background:rgba(0,0,0,.28);color:var(--pink-bright);padding:10px 12px;min-height:42px;cursor:pointer;transition:transform .18s ease,border-color .18s ease,background .18s ease,box-shadow .18s ease}.mg-btn:hover,.fragment:hover,.evidence-card:hover,.witness-card:hover,.line-card:hover,.candle:hover{transform:translateY(-1px);border-color:rgba(168,230,163,.7);box-shadow:0 0 16px rgba(168,230,163,.08)}.mg-btn:disabled,.fragment:disabled,.evidence-card:disabled,.witness-card:disabled,.line-card:disabled,.candle:disabled{opacity:.55;cursor:not-allowed;transform:none}.fragment.selected,.evidence-card.selected,.witness-card.selected,.line-card.selected,.candle.lit{background:rgba(168,230,163,.12);border-color:rgba(168,230,163,.75);color:var(--green);box-shadow:0 0 18px rgba(168,230,163,.12)}.fragment.bad,.evidence-card.bad,.witness-card.bad,.line-card.bad{animation:badPulse .42s ease-out;border-color:rgba(204,68,68,.8)}@keyframes badPulse{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+.decrypt-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px}.decode-line{margin:10px 0;padding:10px;border:1px dashed rgba(212,175,55,.35);color:var(--gold);min-height:42px;letter-spacing:1px;background:rgba(212,175,55,.035)}
+.candle-board{display:grid;grid-template-columns:repeat(4,minmax(64px,1fr));gap:10px;margin-top:12px}.candle{position:relative;text-align:center;padding-top:34px}.candle::before{content:"";position:absolute;top:8px;left:50%;width:14px;height:20px;border-radius:8px 8px 4px 4px;transform:translateX(-50%);background:#221014;border:1px solid rgba(255,107,157,.26)}.candle::after{content:"";position:absolute;top:0;left:50%;width:12px;height:20px;border-radius:50% 50% 45% 45%;transform:translateX(-50%) scale(.25);background:radial-gradient(circle,#fff8d6 0 18%,#ffd36a 42%,rgba(255,107,157,.2) 80%,transparent 100%);opacity:0;filter:drop-shadow(0 0 8px rgba(255,211,106,.6));transition:opacity .22s,transform .22s}.candle.lit::after{opacity:1;transform:translateX(-50%) scale(1);animation:flameDance .7s ease-in-out infinite}@keyframes flameDance{0%,100%{margin-left:0;transform:translateX(-50%) scale(1) rotate(-2deg)}50%{margin-left:1px;transform:translateX(-50%) scale(1.09) rotate(3deg)}}
+.witness-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:9px}.witness-card{white-space:normal;line-height:1.18}.witness-card small{display:block;color:#777;margin-top:6px;letter-spacing:0}.witness-card.solved{border-color:rgba(212,175,55,.75);color:var(--gold)}
+.evidence-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:9px}.evidence-card{white-space:normal;text-align:left}.evidence-card.matched{opacity:.55;border-color:rgba(168,230,163,.65);color:var(--green)}
+.letter-lines{display:grid;gap:8px}.line-card{white-space:normal;text-align:left;line-height:1.25}.line-card.honest{border-color:rgba(168,230,163,.75);color:var(--green)}.line-card.avoid{border-color:rgba(185,166,255,.5);color:#d7c9ff}.letter-preview{margin-top:12px;padding:12px;border:1px solid rgba(212,175,55,.32);background:rgba(212,175,55,.045);font-family:var(--font-hand);font-size:clamp(1rem,2.7vw,1.38rem);line-height:1.25;color:var(--warm);white-space:pre-wrap}.pacing-tag{display:inline-block;margin:.15em .3em .2em 0;padding:.1em .42em;border:1px solid rgba(255,107,157,.24);color:var(--pink-dim);font-family:var(--font-crt);font-size:.72em;letter-spacing:1px;background:rgba(255,107,157,.035)}
+.impact-toast{position:absolute;right:18px;top:18px;z-index:5;border:1px solid rgba(168,230,163,.4);background:rgba(0,0,0,.72);color:var(--green);padding:8px 10px;font-family:var(--font-crt);font-size:.8rem;letter-spacing:1px;box-shadow:0 0 16px rgba(168,230,163,.12);animation:toastIn 1.6s ease forwards}@keyframes toastIn{0%{opacity:0;transform:translateY(-8px)}15%,80%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(-4px)}}
+@media (max-width:700px){.relationship-board{grid-template-columns:1fr}.candle-board{grid-template-columns:repeat(2,1fr)}.mini-game{padding:12px}.mg-row{gap:7px}}
+@media (prefers-reduced-motion: reduce){.story-game.polished-heart::before,.story-chapter-pulse,.story-chapter-pulse::before,.story-chapter-pulse::after,.candle.lit::after{animation:none!important}}
+
 </style>
 </head>
 <body>
@@ -2551,9 +2575,7 @@ const Game={
     const tape=TAPES.find(t=>t.id===id);
     if(!tape)return;
     if(tape.future||tape.locked){this.showLocked(tape);return}
-    this.active=true;this.tapeId=id;inserting=false;
-    D.slot.classList.remove('active','inserting');D.slotLabel.textContent='▶ DRAG HERE';
-    D.channel.textContent='▶ '+id.toUpperCase();
+    this.active=true;this.tapeId=id;D.channel.textContent='▶ '+id.toUpperCase();
     this.render(StoryData[id].start);
   },
   showLocked(tape){
@@ -2664,6 +2686,314 @@ const Game={
   }
 };
 window.Game=Game;
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   POLISH PASS v2 — DEEPER PACING, RELATIONSHIP MAPPING & MINI-GAMES
+   ═══════════════════════════════════════════════════════════════════ */
+(function(){
+  const STAT_KEYS=['clarte','presence','tendresse','fuite','obsession','memoire','vide'];
+  const REL_DEFAULTS={
+    veebabe:{affection:0,confiance:0,blessure:0,presence:0},
+    sacha:{respect:0,miroir:0,tension:0},
+    noe:{verite:0,confiance:0},
+    mila:{memoire:0,douceur:0},
+    archiviste:{corruption:0,lucidite:0}
+  };
+  const clamp=(n,min=0,max=99)=>Math.max(min,Math.min(max,Number(n)||0));
+  const esc=s=>String(s||'').replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+  function statePlus(raw){
+    const st=normalizeState(raw||loadState());
+    st.version=2;
+    st.relations=st.relations||{};
+    for(const [person,vals] of Object.entries(REL_DEFAULTS)){
+      st.relations[person]={...vals,...(st.relations[person]||{})};
+      for(const k of Object.keys(vals))st.relations[person][k]=clamp(st.relations[person][k],0,99);
+    }
+    st.pacing=st.pacing||{beats:0,minigames:0,slowMoments:0,lastTape:null};
+    st.unlocked=st.unlocked||{clues:[],heartFragments:[]};
+    return st;
+  }
+  const oldLoad=loadState, oldSave=saveState;
+  window.loadHeartState=()=>statePlus(oldLoad());
+  window.saveHeartState=s=>oldSave(statePlus(s));
+  function addArr(arr,item){if(item&&!arr.includes(item))arr.push(item)}
+  function addImpact(impact={},meta={}){
+    const st=statePlus(loadState());
+    const statImpact=impact.stats||impact;
+    for(const k of STAT_KEYS){if(Object.prototype.hasOwnProperty.call(statImpact,k))st.stats[k]=clamp((st.stats[k]||0)+Number(statImpact[k]||0),0,99)}
+    if(impact.rel){
+      for(const [person,vals] of Object.entries(impact.rel)){
+        st.relations[person]={...(REL_DEFAULTS[person]||{}),...(st.relations[person]||{})};
+        for(const [k,v] of Object.entries(vals))st.relations[person][k]=clamp((st.relations[person][k]||0)+Number(v||0),0,99);
+      }
+    }
+    if(meta.flag)st.flags[meta.flag]=true;
+    if(impact.flag)st.flags[impact.flag]=true;
+    if(meta.memory)addArr(st.memories,meta.memory);
+    if(impact.memory)addArr(st.memories,impact.memory);
+    if(impact.clue)addArr(st.unlocked.clues,impact.clue);
+    if(impact.fragment)addArr(st.unlocked.heartFragments,impact.fragment);
+    if(impact.pacing){
+      for(const [k,v] of Object.entries(impact.pacing))st.pacing[k]=clamp((st.pacing[k]||0)+Number(v||0),0,999);
+    }
+    st.pacing.beats=clamp((st.pacing.beats||0)+1,0,999);
+    st.history.push({tape:Game.tapeId,choice:meta.text||impact.label||'',impact,at:Date.now()});
+    saveHeartState(st);
+    showImpactToast(impact,st);
+  }
+  function showImpactToast(impact,st){
+    const host=document.querySelector('.story-card');
+    if(!host)return;
+    const bits=[];
+    const statImpact=impact.stats||impact;
+    if(statImpact.presence)bits.push('présence '+(statImpact.presence>0?'+':'')+statImpact.presence);
+    if(statImpact.tendresse)bits.push('tendresse '+(statImpact.tendresse>0?'+':'')+statImpact.tendresse);
+    if(statImpact.clarte)bits.push('clarté '+(statImpact.clarte>0?'+':'')+statImpact.clarte);
+    if(statImpact.vide)bits.push('vide '+(statImpact.vide>0?'+':'')+statImpact.vide);
+    if(impact.rel?.veebabe?.confiance)bits.push('Veebabe confiance +'+impact.rel.veebabe.confiance);
+    if(!bits.length)return;
+    const t=document.createElement('div');t.className='impact-toast';t.textContent=bits.slice(0,3).join(' · ');host.appendChild(t);setTimeout(()=>t.remove(),1700);
+  }
+  Game.impact=function(impact={},meta={}){addImpact(impact,meta)};
+  Game.statPills=function(){
+    const st=statePlus(loadState()),s=st.stats;
+    return ['presence','tendresse','clarte','memoire','fuite','obsession','vide'].map(k=>`<span class="stat-pill">${this.statNames[k]} ${s[k]||0}</span>`).join('');
+  };
+  Game.relationshipBoard=function(){
+    const st=statePlus(loadState()),r=st.relations;
+    const vScore=clamp((r.veebabe.affection+r.veebabe.confiance+r.veebabe.presence*1.2)-(r.veebabe.blessure*.9),0,100);
+    const sScore=clamp((r.sacha.respect*1.5+r.sacha.miroir)-(r.sacha.tension*.5),0,100);
+    const nScore=clamp(r.noe.verite+r.noe.confiance,0,100);
+    const mScore=clamp(r.mila.memoire+r.mila.douceur,0,100);
+    return `<div class="relationship-board" aria-label="cartographie relationnelle">
+      <div class="rel-chip" style="--rel:${vScore}"><strong>VEEBABE</strong><span>confiance ${r.veebabe.confiance} · blessure ${r.veebabe.blessure}</span><i class="rel-meter"></i></div>
+      <div class="rel-chip mirror" style="--rel:${sScore}"><strong>SACHA</strong><span>respect ${r.sacha.respect} · miroir ${r.sacha.miroir}</span><i class="rel-meter"></i></div>
+      <div class="rel-chip" style="--rel:${nScore}"><strong>NOÉ</strong><span>vérité ${r.noe.verite}</span><i class="rel-meter"></i></div>
+      <div class="rel-chip" style="--rel:${mScore}"><strong>MILA</strong><span>mémoire ${r.mila.memoire}</span><i class="rel-meter"></i></div>
+    </div>`;
+  };
+  const oldBase=Game.base.bind(Game);
+  Game.base=function(title,kicker){
+    const wrap=oldBase(title,kicker);
+    wrap.classList.add('polished-heart');
+    const pulse=document.createElement('div');pulse.className='story-chapter-pulse';wrap.appendChild(pulse);
+    const footer=wrap.querySelector('.story-footer');
+    if(footer)footer.insertAdjacentHTML('beforebegin',this.relationshipBoard());
+    return wrap;
+  };
+  function safeText(t){return String(t||'').replace(/\n/g,'<br>')}
+  Game.render=async function(nodeId){
+    const data=StoryData[this.tapeId],scene=data.scenes[nodeId];
+    if(!scene)return;
+    if(scene.ending){this.showEnding();return}
+    if(scene.endTape){this.completeTape(scene);return}
+    await fadeToScreen(()=>{
+      const wrap=this.base(data.title,data.kicker);
+      wrap.querySelector('.story-speaker').textContent=scene.speaker||'';
+      wrap.querySelector('.story-text').innerHTML=safeText(scene.text||'');
+      const choices=wrap.querySelector('.choice-list');
+      if(scene.game&&MiniGames[scene.game]){
+        MiniGames[scene.game](wrap,scene,()=>{
+          this.impact(scene.completeImpact||{presence:1},{flag:scene.completeFlag,text:'mini-jeu: '+scene.game,memory:scene.memory});
+          this.render(scene.next||'end');
+        });
+      }else{
+        for(const ch of scene.choices||[]){
+          choices.appendChild(this.btn(ch.text,ch.preview,()=>{
+            this.impact(ch.impact||{},{flag:ch.flag,memory:ch.memory,text:ch.text});
+            this.render(ch.next||'end');
+          }));
+        }
+      }
+      if(scene.memory){const mem=document.createElement('div');mem.className='memory-card';mem.textContent=scene.memory;wrap.querySelector('.story-card').appendChild(mem)}
+      D.screen.appendChild(wrap);
+    });
+  };
+  function mgShell(wrap,title,desc){
+    const card=wrap.querySelector('.story-card');
+    const box=document.createElement('div');box.className='mini-game';
+    box.innerHTML=`<div class="mg-title">${title}</div><div class="mg-desc">${desc}</div><div class="mg-body"></div><div class="mg-feedback"></div>`;
+    card.appendChild(box);
+    return {box,body:box.querySelector('.mg-body'),feed:box.querySelector('.mg-feedback')};
+  }
+  const MiniGames={
+    decryptMessage(wrap,scene,done){
+      const {body,feed}=mgShell(wrap,'Décrypter le message','Reconstitue la phrase cachée sans la traiter comme un simple code. Le cœur donne déjà l’ordre.');
+      const order=['RESTE','AVANT','DE','RÉSOUDRE'];
+      const pieces=['RÉSOUDRE','RESTE','DE','AVANT','DOSSIER','MINUIT'];
+      let picked=[];
+      body.innerHTML='<div class="decode-line" aria-live="polite">_ _ _ _</div><div class="decrypt-grid"></div><div class="mg-row" style="margin-top:10px"></div>';
+      const line=body.querySelector('.decode-line'),grid=body.querySelector('.decrypt-grid'),row=body.querySelector('.mg-row');
+      function update(){line.textContent=picked.join(' ')||'_ _ _ _'}
+      pieces.forEach(p=>{const b=document.createElement('button');b.className='fragment';b.textContent=p;b.onclick=()=>{Snd.sfxTap();if(order[picked.length]===p){picked.push(p);b.classList.add('selected');b.disabled=true;feed.textContent='Fragment accepté.';update();if(picked.length===order.length){feed.textContent='Message restauré: RESTE AVANT DE RÉSOUDRE.';addImpact({stats:{clarte:2,presence:2,memoire:1},rel:{veebabe:{confiance:1,presence:1},archiviste:{lucidite:1}},clue:'RESTE AVANT DE RÉSOUDRE',pacing:{minigames:1,slowMoments:1}},{text:'message décrypté'});setTimeout(done,850)}}else{b.classList.add('bad');feed.textContent='Le lecteur grince: ce n’est pas l’ordre du cœur.';addImpact({stats:{obsession:1,vide:1},rel:{archiviste:{corruption:1}}},{text:'mauvais fragment'});setTimeout(()=>b.classList.remove('bad'),450)}};grid.appendChild(b)});
+      const skip=document.createElement('button');skip.className='mg-btn';skip.textContent='Forcer le décodage';skip.onclick=()=>{addImpact({stats:{obsession:2,clarte:1,vide:1},rel:{archiviste:{corruption:1}},pacing:{minigames:1}},{text:'décodage forcé'});done()};row.appendChild(skip);update();
+    },
+    candleSequence(wrap,scene,done){
+      const {body,feed}=mgShell(wrap,'Allumer les bougies dans le bon ordre','Ce n’est pas une épreuve de vitesse. C’est une épreuve de présence. Écoute ce que chaque flamme demande.');
+      const order=['regarder','écouter','rester','parler'];let i=0;
+      body.innerHTML='<div class="mg-desc"><span class="pacing-tag">indice</span> Regarder avant d’expliquer. Écouter avant de répondre. Rester avant de promettre. Parler quand le silence devient lâche.</div><div class="candle-board"></div>';
+      const board=body.querySelector('.candle-board');
+      ['parler','regarder','rester','écouter'].forEach(label=>{const b=document.createElement('button');b.className='candle';b.textContent=label.toUpperCase();b.onclick=()=>{Snd.sfxTap();if(label===order[i]){b.classList.add('lit');b.disabled=true;i++;feed.textContent=i<order.length?'La flamme tient. Continue doucement.':'Les quatre flammes restent allumées.';addImpact({stats:{presence:1,tendresse:1},rel:{veebabe:{presence:1,confiance:1}}},{text:'bougie '+label});if(i===order.length){addImpact({stats:{presence:2,tendresse:1,memoire:1},rel:{veebabe:{affection:1,confiance:1}},pacing:{minigames:1,slowMoments:1}},{text:'bougies complètes'});setTimeout(done,900)}}else{b.classList.add('bad');feed.textContent='Tu vas trop vite. La flamme refuse.';addImpact({stats:{fuite:1,vide:1},rel:{veebabe:{blessure:1}}},{text:'ordre bougie raté'});setTimeout(()=>b.classList.remove('bad'),450)}};board.appendChild(b)});
+    },
+    witnessMap(wrap,scene,done){
+      const {body,feed}=mgShell(wrap,'Cartographier les témoins','Chaque témoin protège une partie différente du cœur. Associe-les à ce qu’ils gardent vraiment.');
+      const pairs={Noé:'vérité',Mila:'mémoire',Sacha:'présence'};let solved=0,active=null;
+      body.innerHTML='<div class="witness-grid people"></div><div class="mg-row tags" style="margin-top:10px"></div>';
+      const people=body.querySelector('.people'),tags=body.querySelector('.tags');
+      Object.keys(pairs).forEach(name=>{const b=document.createElement('button');b.className='witness-card';b.innerHTML=`${name}<small>choisir puis associer</small>`;b.onclick=()=>{active=name;[...people.children].forEach(x=>x.classList.remove('selected'));b.classList.add('selected');feed.textContent=`${name}: quel rôle joue-t-il vraiment ?`};people.appendChild(b)});
+      ['jalousie','présence','mémoire','vérité'].forEach(tag=>{const b=document.createElement('button');b.className='mg-btn';b.textContent=tag.toUpperCase();b.onclick=()=>{Snd.sfxTap();if(!active){feed.textContent='Choisis d’abord un témoin.';return}if(pairs[active]===tag){feed.textContent=`${active} garde la ${tag}.`;addImpact({stats:{clarte:1,memoire:1},rel:{[active.toLowerCase()]: active==='Sacha'?{respect:1,miroir:1}:active==='Noé'?{verite:2,confiance:1}:{memoire:2,douceur:1}}},{text:'témoin '+active+' = '+tag});[...people.children].find(x=>x.textContent.includes(active)).classList.add('solved');active=null;solved++;if(solved===3){addImpact({stats:{clarte:2,presence:1},rel:{sacha:{respect:2},veebabe:{confiance:1}},pacing:{minigames:1}},{text:'cartographie témoins complète'});setTimeout(done,850)}}else{feed.textContent='Mauvaise lecture. Tu projettes au lieu d’écouter.';addImpact({stats:{obsession:1,fuite:1},rel:{sacha:{tension:1},veebabe:{blessure:1}}},{text:'mauvaise cartographie'});}};tags.appendChild(b)});
+    },
+    evidencePairs(wrap,scene,done){
+      const {body,feed}=mgShell(wrap,'Relier les preuves sans les posséder','Sélectionne deux cartes qui respirent ensemble. Les indices sont vrais seulement quand ils gardent leur douceur.');
+      const pairs={'fleur sèche':'souvenir gardé','capture d’écran':'message jamais envoyé','playlist cassée':'attente répétée'};let first=null,matched=0;
+      const items=['souvenir gardé','capture d’écran','attente répétée','fleur sèche','message jamais envoyé','playlist cassée'];
+      body.innerHTML='<div class="evidence-grid"></div>';
+      const grid=body.querySelector('.evidence-grid');
+      function isPair(a,b){return pairs[a]===b||pairs[b]===a}
+      items.forEach(it=>{const b=document.createElement('button');b.className='evidence-card';b.textContent=it;b.onclick=()=>{Snd.sfxTap();if(b.classList.contains('matched'))return;if(!first){first={it,b};b.classList.add('selected');feed.textContent='Choisis la preuve qui répond à celle-ci.';return}if(first.b===b)return;if(isPair(first.it,it)){b.classList.add('matched');first.b.classList.add('matched');first.b.classList.remove('selected');feed.textContent='Connexion acceptée. Cette preuve n’accuse personne; elle explique une attente.';matched++;addImpact({stats:{clarte:1,memoire:1,tendresse:1},rel:{mila:{memoire:1},veebabe:{confiance:1}}},{text:'preuve reliée'});first=null;if(matched===3){addImpact({stats:{clarte:2,memoire:2},rel:{veebabe:{affection:1,confiance:1},mila:{memoire:2}},pacing:{minigames:1,slowMoments:1}},{text:'tableau indices complet'});setTimeout(done,900)}}else{b.classList.add('bad');first.b.classList.add('bad');feed.textContent='Le dossier veut aller trop vite. Recommence sans forcer.';addImpact({stats:{obsession:1,vide:1},rel:{archiviste:{corruption:1}}},{text:'faux lien preuve'});setTimeout(()=>{b.classList.remove('bad');first?.b.classList.remove('bad','selected');first=null},520)}};grid.appendChild(b)});
+    },
+    composeLetter(wrap,scene,done){
+      const {body,feed}=mgShell(wrap,'Composer la lettre finale','Choisis trois lignes. La lettre peut être jolie, mais seule l’honnêteté pèse assez lourd pour survivre au vide.');
+      const lines=[
+        {t:'Je t’ai vraiment aimée, même quand je faisais semblant d’être seulement occupé.',kind:'honest'},
+        {t:'Je voulais résoudre ton cœur parce que j’avais peur de te donner le mien.',kind:'honest'},
+        {t:'Si tu souris sans moi, je veux que ce soit un vrai sourire.',kind:'honest'},
+        {t:'J’espère qu’un jour tu comprendras que j’avais mes raisons.',kind:'avoid'},
+        {t:'Le dossier prouve que je n’ai pas tout raté.',kind:'avoid'},
+        {t:'Je pars avant que tu me voies échouer encore.',kind:'avoid'}
+      ];let chosen=[];
+      body.innerHTML='<div class="letter-lines"></div><div class="letter-preview">— aucune ligne choisie —</div>';
+      const list=body.querySelector('.letter-lines'),prev=body.querySelector('.letter-preview');
+      function update(){prev.textContent=chosen.length?chosen.map(x=>x.t).join('\n\n'):'— aucune ligne choisie —'}
+      lines.forEach(line=>{const b=document.createElement('button');b.className='line-card';b.textContent=line.t;b.onclick=()=>{Snd.sfxTap();if(b.classList.contains('selected'))return;if(chosen.length>=3){feed.textContent='Trois lignes suffisent. Trop expliquer, c’est encore fuir.';return}chosen.push(line);b.classList.add('selected',line.kind);update();feed.textContent=line.kind==='honest'?'La bande se réchauffe.':'La bande accepte la ligne, mais elle sonne moins vraie.';if(chosen.length===3){const honest=chosen.filter(x=>x.kind==='honest').length;addImpact(honest>=2?{stats:{tendresse:3,presence:1,memoire:1},rel:{veebabe:{affection:2,confiance:1},archiviste:{lucidite:1}},flag:'letter_honest',pacing:{minigames:1,slowMoments:1}}:{stats:{fuite:2,obsession:1,vide:1,tendresse:1},rel:{veebabe:{blessure:1},archiviste:{corruption:1}},flag:'letter_avoidant',pacing:{minigames:1}},{text:'lettre composée'});setTimeout(done,1100)}};list.appendChild(b)});update();
+    }
+  };
+  window.MiniGames=MiniGames;
+  Object.assign(StoryData,{
+    tape1:{title:'TAPE 1 — Le message',kicker:'20:08 · invitation inconnue',start:'signal',scenes:{
+      signal:{speaker:'Le téléphone',text:'Le message arrive sans vibration. Il est déjà ouvert quand tu regardes l’écran.\n\n<span class="danger">“Bonsoir, Dr Mind. Ce soir, Veebabe fête sa naissance. Quelqu’un va sourire. Quelqu’un va mentir. Quelqu’un va attendre.”</span>\n\nLe curseur reste vivant après le point final.',choices:[
+        {text:'Répondre: “Qui êtes-vous ?”',preview:'Tu entres dans l’enquête sans nier l’appel.',next:'pre_decode',impact:{stats:{clarte:1,presence:1},rel:{archiviste:{lucidite:1}}},flag:'answered_message'},
+        {text:'Observer les métadonnées du message.',preview:'Réflexe de détective. Utile, mais froid.',next:'pre_decode',impact:{stats:{clarte:2,obsession:1},rel:{archiviste:{lucidite:1}}},flag:'scanned_message'},
+        {text:'Fermer l’écran et faire comme si de rien n’était.',preview:'La bande déteste l’évitement.',next:'pre_decode',impact:{stats:{fuite:2,vide:1},rel:{veebabe:{blessure:1},archiviste:{corruption:1}}},flag:'ignored_first_call'}]},
+      pre_decode:{speaker:'L’Archiviste',text:'Une deuxième ligne se forme, mais les mots sont mélangés.\n\nTu peux forcer le code. Tu peux aussi le laisser respirer.\n\n<span class="quiet">La différence entre les deux sera enregistrée.</span>',game:'decryptMessage',next:'mission'},
+      mission:{speaker:'L’Archiviste',text:'La phrase restaurée reste au centre de l’écran:\n\n<strong>RESTE AVANT DE RÉSOUDRE.</strong>\n\nPuis la mission tombe comme une clé humide dans ta paume:\n\n“Va à la fête. Trouve le Mystère du Cœur. Mais souviens-toi: toutes les fins ne sont pas vraies.”',choices:[
+        {text:'Accepter la mission, mais promettre de voir Veebabe avant le dossier.',next:'arrival',impact:{stats:{presence:2,tendresse:1},rel:{veebabe:{presence:1,confiance:1}},fragment:'promesse de présence'},flag:'presence_promise'},
+        {text:'Accepter la mission comme une enquête pure.',next:'arrival',impact:{stats:{obsession:2,clarte:1},rel:{archiviste:{lucidite:1}}},flag:'case_first'},
+        {text:'Accepter parce que son prénom apparaît trop souvent pour être ignoré.',next:'arrival',impact:{stats:{tendresse:2,memoire:1},rel:{veebabe:{affection:1}},fragment:'son prénom répété'},flag:'name_matters'}]},
+      arrival:{speaker:'Narration',text:'Tu prends ta veste. Sur l’écran noir, ton reflet a déjà l’air coupable.\n\nPas parce que tu as fait quelque chose.\n\nParce que tu as attendu trop longtemps pour faire quelque chose.',choices:[{text:'Entrer dans la nuit.',next:'end',impact:{stats:{presence:1},pacing:{slowMoments:1}}}]},
+      end:{endTape:true,text:'TAPE 1 ARCHIVÉE.\n\nLa mission est claire. Le cœur, non. Et c’est exactement le problème.'}
+    }},
+    tape2:{title:'TAPE 2 — La fête',kicker:'20:47 · lumières roses, silences bleus',start:'door',scenes:{
+      door:{speaker:'Narration',text:'La fête n’est pas bruyante. Elle fait semblant.\n\nDes ballons collent au plafond. Une chanson tourne avec trop de douceur. Veebabe rit au milieu de la pièce, mais son regard vérifie la porte une demi-seconde avant de te trouver.',choices:[
+        {text:'Aller vers elle avant de saluer tout le monde.',next:'veebabe',impact:{stats:{presence:3,tendresse:1},rel:{veebabe:{presence:2,confiance:1,affection:1}}},flag:'greeted_veebabe_first'},
+        {text:'Scanner la pièce pour repérer les anomalies.',next:'room',impact:{stats:{clarte:2,obsession:1},rel:{veebabe:{blessure:1}}},flag:'scanned_party'},
+        {text:'Rester près du mur et attendre le bon moment.',next:'wall',impact:{stats:{fuite:2,clarte:1},rel:{veebabe:{blessure:1}}},flag:'waited_wall'}]},
+      veebabe:{speaker:'Veebabe',text:'“T’es venu.”\n\nElle le dit comme une blague. Pas comme une surprise. Pas exactement.\n\nPuis, plus bas: “Je savais pas si t’allais choisir moi ou tes mystères.”',choices:[
+        {text:'Dire: “Je suis là maintenant. Pas à moitié.”',next:'candles_intro',impact:{stats:{presence:2,tendresse:2},rel:{veebabe:{confiance:2,presence:1}}},flag:'not_half_here'},
+        {text:'Répondre en plaisantant pour détendre l’air.',next:'candles_intro',impact:{stats:{fuite:1,tendresse:1},rel:{veebabe:{affection:1,blessure:1}}},flag:'joked_deflect'},
+        {text:'Lui demander si elle a reçu un message aussi.',next:'candles_intro',impact:{stats:{obsession:2,clarte:1},rel:{veebabe:{blessure:1}}},flag:'asked_case_too_soon'}]},
+      room:{speaker:'Narration',text:'Tu notes les sorties, les visages, les objets déplacés. C’est brillant.\n\nPuis tu réalises que Veebabe t’a vu compter les indices avant de lui souhaiter joyeux anniversaire.',choices:[{text:'Rattraper le moment.',next:'candles_intro',impact:{stats:{presence:1,tendresse:1},rel:{veebabe:{confiance:1}}}}]},
+      wall:{speaker:'Narration',text:'Le bon moment ne vient pas.\n\nIl ne vient jamais quand on lui demande de faire le travail à notre place.',choices:[{text:'Sortir du mur.',next:'candles_intro',impact:{stats:{presence:1,clarte:1},rel:{veebabe:{blessure:1}}}}]},
+      candles_intro:{speaker:'Mila',text:'Mila pose quatre petites bougies sur une assiette.\n\n“Elle a oublié de les allumer. Ou elle attendait que quelqu’un remarque.”\n\nLa pièce devient plus lente.',game:'candleSequence',next:'sacha_enters'},
+      sacha_enters:{speaker:'Sacha',text:'Sacha arrive avec une boisson qu’il n’a pas oubliée.\n\nIl ne te défie pas. Il tend juste le verre à Veebabe, naturellement.\n\nC’est précisément pour ça que ça te pique.',choices:[
+        {text:'Le remercier sans transformer ça en guerre.',next:'small_table',impact:{stats:{clarte:1,tendresse:1},rel:{sacha:{respect:2,miroir:1},veebabe:{confiance:1}}},flag:'sacha_thanked'},
+        {text:'Faire comme si tu n’avais rien ressenti.',next:'small_table',impact:{stats:{fuite:2,vide:1},rel:{sacha:{tension:1},veebabe:{blessure:1}}},flag:'sacha_silence'},
+        {text:'Te dire que c’est un indice, pas une douleur.',next:'small_table',impact:{stats:{obsession:2,clarte:1},rel:{sacha:{miroir:1,tension:1}}},flag:'sacha_as_clue'}]},
+      small_table:{speaker:'Veebabe',text:'Veebabe souffle doucement les bougies une par une, même celles que tu as aidé à allumer.\n\n“C’est bizarre,” dit-elle. “Les vœux ont l’air plus lourds quand quelqu’un les regarde vraiment.”',choices:[
+        {text:'Rester avec cette phrase sans la disséquer.',next:'end',impact:{stats:{presence:2,tendresse:1,memoire:1},rel:{veebabe:{affection:1,confiance:1,presence:1}},memory:'Les quatre flammes ont tremblé quand elle a parlé de vœux lourds.'}},
+        {text:'La noter mentalement pour l’enquête.',next:'end',impact:{stats:{clarte:1,obsession:1,memoire:1}}}
+      ]},
+      end:{endTape:true,text:'TAPE 2 ARCHIVÉE.\n\nLa fête a ralenti. Ce n’est pas encore l’amour. C’est plus dangereux: une occasion de rester.'}
+    }},
+    tape3:{title:'TAPE 3 — Les témoins',kicker:'21:31 · Noé, Mila, Sacha',start:'hallway',scenes:{
+      hallway:{speaker:'Noé',text:'Noé t’arrête dans le couloir.\n\n“Je vais te dire un truc simple, Dr Mind. Si tu veux résoudre son cœur, commence par arrêter de te cacher derrière ton intelligence.”',choices:[
+        {text:'Demander ce que tu as concrètement raté.',next:'mila',impact:{stats:{clarte:2,presence:1},rel:{noe:{verite:2,confiance:1}}},flag:'asked_noe_truth'},
+        {text:'Dire que personne ne voit tes efforts.',next:'mila',impact:{stats:{fuite:1,tendresse:1},rel:{noe:{verite:1},veebabe:{blessure:1}}},flag:'defended_effort'},
+        {text:'Passer devant lui. Pas le temps.',next:'mila',impact:{stats:{obsession:2,vide:1},rel:{noe:{confiance:0},veebabe:{blessure:1}}},flag:'ignored_noe_v2'}]},
+      mila:{speaker:'Mila',text:'Mila te montre une vieille capture d’écran, puis la reprend aussitôt.\n\n“Elle garde les petits trucs. Les phrases que les autres oublient. Les dates. Les chansons. Les preuves que quelqu’un a pensé à elle.”',choices:[
+        {text:'Demander quelle chanson revient toujours.',next:'sacha',impact:{stats:{memoire:2,clarte:1},rel:{mila:{memoire:2,douceur:1}},memory:'Une chanson répétée trois fois à 00:00.'}},
+        {text:'Admettre que tu as minimisé les petits détails.',next:'sacha',impact:{stats:{tendresse:2,presence:1},rel:{mila:{douceur:1},veebabe:{confiance:1}}},flag:'admitted_details'},
+        {text:'Demander à voir la capture pour confirmer.',next:'sacha',impact:{stats:{obsession:1,clarte:1},rel:{mila:{memoire:1}}}}
+      ]},
+      sacha:{speaker:'Sacha',text:'Sacha te retrouve près de la cuisine.\n\n“Je ne suis pas ton ennemi. Mais si tu disparais chaque fois que ça devient vrai, quelqu’un d’autre finira toujours par rester.”\n\nIl n’a pas besoin d’élever la voix. C’est ça qui rend la phrase lourde.',choices:[
+        {text:'Lui dire: “T’as raison, et ça me fait mal.”',next:'map_intro',impact:{stats:{clarte:2,tendresse:1},rel:{sacha:{respect:3,miroir:2},veebabe:{confiance:1}}},flag:'sacha_honesty'},
+        {text:'Demander s’il l’aime.',next:'map_intro',impact:{stats:{fuite:1,clarte:1},rel:{sacha:{tension:2,miroir:1},veebabe:{blessure:1}}},flag:'asked_sacha_love'},
+        {text:'Répondre que tu es là maintenant.',next:'map_intro',impact:{stats:{presence:1,tendresse:1},rel:{sacha:{respect:1},veebabe:{presence:1}}},flag:'now_here'}]},
+      map_intro:{speaker:'L’Archiviste',text:'Les trois témoins laissent chacun une trace différente dans la cassette.\n\nSi tu les ranges mal, tu te raconteras une histoire plus simple que la vérité.',game:'witnessMap',next:'end'},
+      end:{endTape:true,text:'TAPE 3 ARCHIVÉE.\n\nLes témoins n’ont pas désigné un coupable. Ils ont dessiné ton absence avec trois couleurs différentes.'}
+    }},
+    tape4:{title:'TAPE 4 — Les indices',kicker:'22:22 · les preuves ont des battements',start:'box',scenes:{
+      box:{speaker:'Narration',text:'Sous la table des cadeaux, une boîte attend sans serrure.\n\nPas cachée. Pire: visible. Le genre de chose qu’on ne trouve que lorsqu’on arrête de chercher ailleurs.',choices:[
+        {text:'Demander à Veebabe si tu peux l’ouvrir.',next:'open',impact:{stats:{presence:2,tendresse:2},rel:{veebabe:{confiance:2,presence:1}}},flag:'asked_box_permission'},
+        {text:'L’ouvrir doucement, sans voler le moment.',next:'open',impact:{stats:{tendresse:1,clarte:1,memoire:1},rel:{veebabe:{confiance:1}}},flag:'opened_gently'},
+        {text:'L’ouvrir vite avant que quelqu’un revienne.',next:'open',impact:{stats:{obsession:2,vide:1},rel:{veebabe:{blessure:2}}},flag:'opened_fast'}]},
+      open:{speaker:'Narration',text:'Dedans: une fleur sèche, une capture d’écran, une playlist arrêtée au milieu d’un titre, et une note pliée deux fois.\n\nLe dossier voudrait tout avaler.\n\nMais ces preuves ne sont pas à toi.',game:'evidencePairs',next:'note'},
+      note:{speaker:'La note',text:'La note dit:\n\n<strong>“Il remarque les détails que personne ne voit. Sauf quand c’est moi qui attends.”</strong>\n\nLa phrase ne te crie pas dessus. Elle fait pire: elle reste calme.',choices:[
+        {text:'Aller la voir maintenant, même sans phrase parfaite.',next:'now',impact:{stats:{presence:3,tendresse:2},rel:{veebabe:{presence:2,confiance:2,affection:1}},fragment:'sans phrase parfaite'},flag:'went_now_v2'},
+        {text:'Finir l’analyse avant de lui parler.',next:'later',impact:{stats:{obsession:2,clarte:1,fuite:1},rel:{veebabe:{blessure:1},archiviste:{corruption:1}}},flag:'analysis_first'},
+        {text:'Écrire une première phrase au dos du dossier.',next:'write',impact:{stats:{tendresse:2,memoire:1},rel:{veebabe:{affection:1}}},flag:'first_letter_line'}]},
+      now:{speaker:'Veebabe',text:'Tu la trouves près de la fenêtre.\n\nTu ne dis pas “j’ai compris”. Tu dis: “J’ai peut-être compris trop tard, mais je suis là maintenant.”\n\nElle ne sourit pas tout de suite. Cette retenue rend le moment plus vrai.',choices:[{text:'Ne pas remplir le silence. Rester.',next:'end',impact:{stats:{presence:3,tendresse:1,memoire:1},rel:{veebabe:{presence:2,confiance:1}}}}]},
+      later:{speaker:'L’Archiviste',text:'Le dossier devient propre. Presque beau.\n\nUne phrase apparaît sur la première page: <span class="danger">“Parfait n’est pas présent.”</span>',choices:[{text:'Garder cette phrase même si elle pique.',next:'end',impact:{stats:{clarte:2,vide:1},rel:{archiviste:{lucidite:1,corruption:1}}}}]},
+      write:{speaker:'Dr Mind',text:'Tu écris mal au début. Puis moins mal. Puis vrai.\n\nCe n’est pas une déclaration. C’est un aveu qui apprend à respirer.',choices:[{text:'Mettre la phrase dans ta poche.',next:'end',impact:{stats:{tendresse:2,memoire:1,presence:1},rel:{veebabe:{affection:1}}}}]},
+      end:{endTape:true,text:'TAPE 4 ARCHIVÉE.\n\nTu as assez d’indices pour conclure. Pas encore assez de vérité pour choisir sans trembler.'}
+    }},
+    tape5:{title:'TAPE 5 — La lettre',kicker:'23:59 · les fins mentent très bien',start:'midnight',scenes:{
+      midnight:{speaker:'L’Archiviste',text:'Minuit approche. La cassette chauffe sous la coque.\n\nToutes les routes reviennent ici: la fête, les témoins, Sacha, les preuves, les phrases que tu as avalées.\n\nIl reste une action. Pas une bonne action. Une vraie.',choices:[
+        {text:'Chercher la conclusion parfaite.',next:'calc',impact:{stats:{obsession:2,clarte:1},rel:{archiviste:{corruption:1}}}},
+        {text:'Chercher Veebabe avant que la musique coupe.',next:'veebabe',impact:{stats:{presence:3,tendresse:1},rel:{veebabe:{presence:2,confiance:1}}}},
+        {text:'Sortir la lettre commencée.',next:'letter_game',impact:{stats:{tendresse:2,memoire:1},rel:{veebabe:{affection:1}}}}
+      ]},
+      calc:{speaker:'Dr Mind',text:'Tu relies tout. Noé. Mila. Sacha. La note. La boîte. La chanson.\n\nLe dossier devient magnifique.\n\nEt froid.',choices:[{text:'Admettre que comprendre n’est pas rester.',next:'letter_game',impact:{stats:{clarte:2,presence:1,vide:1},rel:{archiviste:{lucidite:1}}}}]},
+      veebabe:{speaker:'Veebabe',text:'Tu la trouves avant la dernière chanson.\n\nElle ne demande pas un roman.\n\nElle demande juste: “Cette fois, tu restes ?”',choices:[
+        {text:'Répondre sans détour: “Oui. Même sans solution.”',next:'letter_game',impact:{stats:{presence:3,tendresse:2,memoire:1},rel:{veebabe:{presence:2,confiance:2,affection:1}},flag:'answered_stay'}},
+        {text:'Dire que tu essaies de comprendre.',next:'letter_game',impact:{stats:{clarte:1,obsession:1,fuite:1},rel:{veebabe:{blessure:1}}}}
+      ]},
+      letter_game:{speaker:'Dr Mind',text:'La lettre attend.\n\nPas pour sauver tout le monde. Pas pour forcer une fin.\n\nPour que le silence ne soit plus ton seul langage.',game:'composeLetter',next:'resolve'},
+      resolve:{ending:true}
+    }}
+  });
+  Game.chooseEnding=function(){
+    const st=statePlus(loadState()),s=st.stats,r=st.relations,v=r.veebabe;
+    const presenceCore=(s.presence||0)+(v.presence||0)+(v.confiance||0);
+    const tendernessCore=(s.tendresse||0)+(v.affection||0);
+    const harm=(s.fuite||0)+(s.vide||0)+(v.blessure||0)+(r.archiviste.corruption||0);
+    if(st.flags.letter_honest&&presenceCore>=24&&tendernessCore>=17&&(s.memoire||0)>=7&&harm<=12)return 'attente_vraie';
+    if((s.obsession||0)>=(s.presence||0)+5||(r.archiviste.corruption||0)>=6&&s.obsession>=8)return 'detective';
+    if(harm>=18)return 'vide';
+    if(st.flags.letter_honest||tendernessCore>=16)return 'lettre';
+    return 'fausse_bonne';
+  };
+  Game.showEnding=async function(){
+    const key=this.chooseEnding();
+    const endings={
+      attente_vraie:{title:'FIN 5-A · La porte entrouverte',speaker:'Veebabe',body:'Tu ne répares pas tout en une phrase. Ce serait faux, et cette bande a déjà assez menti.\n\nMais cette fois, tu restes sans transformer sa douleur en énigme.\n\nVeebabe ne te pardonne pas comme dans un conte. Elle respire. Elle te regarde. Et le lecteur, pour une fois, n’écrit pas “conclusion”.\n\nIl écrit: <strong>preuve de présence</strong>.',note:'FIN LIMINALE · TAPE 6 PEUT UN JOUR RÉPONDRE'},
+      detective:{title:'FIN 5-B · La fin du détective',speaker:'L’Archiviste',body:'Tu as résolu le mystère. Tous les indices sont alignés. Les témoins sont classés. Même Sacha a trouvé sa place sur le tableau.\n\nLe dossier est parfait.\n\nVeebabe, elle, n’était pas un dossier.\n\nComprendre trop tard, c’est parfois une autre manière de partir.',note:'FIN DÉBLOQUÉE · PAS UNE VRAIE FIN'},
+      vide:{title:'FIN 5-C · La fin du vide',speaker:'Le Vide',body:'La fête devient muette. Les bougies se rallument toutes seules. Les mêmes mots reviennent, mais sans chaleur.\n\nLe lecteur te félicite.\n\nC’est comme ça que tu sais qu’il ment.',note:'FIN CORROMPUE · PAS UNE VRAIE FIN'},
+      lettre:{title:'FIN 5-D · La lettre restée chaude',speaker:'Dr Mind',body:'Tu ne sais pas si elle lira la lettre. Tu ne sais pas si ça change quelque chose.\n\nMais tu refuses enfin de laisser le silence parler à ta place.\n\nCe n’est pas assez pour tout réparer. C’est assez pour être vrai.',letter:'Je t’ai vraiment aimée. Tu n’as juste jamais pu le voir.\n\nJe voulais résoudre ton cœur parce que j’avais peur de te donner le mien.\n\nVis bien. Sois heureuse, même loin de moi.\n\nCeci est mon dernier message aux esprits du vide.\n\nAvec amour,\nDr Mind Heartly.',note:'FIN LETTRE · VRAIE DOULEUR, VÉRITÉ INCOMPLÈTE'},
+      fausse_bonne:{title:'FIN 5-E · La fausse bonne fin',speaker:'Narration',body:'La musique remonte. Veebabe sourit. Les lumières deviennent tendres.\n\nTout ressemble à une bonne fin.\n\nMais dans le coin de l’écran, une ligne clignote: <span class="danger">“elle a souri pour que tu ne voies pas.”</span>',note:'FIN DÉBLOQUÉE · PAS UNE VRAIE FIN'}
+    };
+    const e=endings[key],st=statePlus(loadState());
+    st.tapes[this.tapeId]={complete:true,ending:key,at:Date.now()};
+    addArr(st.endings,key);if(key==='attente_vraie')st.flags.tape6_teased=true;saveHeartState(st);buildRack();
+    await fadeToScreen(()=>{
+      const wrap=this.base(e.title,'RÉSULTAT DE LA BANDE');
+      wrap.querySelector('.story-speaker').textContent=e.speaker;
+      wrap.querySelector('.story-text').innerHTML=`<span class="ending-mark">${e.note}</span><br>${safeText(e.body)}`;
+      if(e.letter){const note=document.createElement('div');note.className='letter-note';note.innerHTML=safeText(e.letter);wrap.querySelector('.story-card').appendChild(note)}
+      const lock=document.createElement('div');lock.className='truth-lock';lock.textContent='TAPE 6 SCELLÉE POUR LA FUTURE TRUE END';wrap.querySelector('.story-card').appendChild(lock);
+      const choices=wrap.querySelector('.choice-list');
+      choices.appendChild(this.btn('Retour à l’archive','Les autres fins gardent leurs dents.',()=>this.exitToRack()));
+      choices.appendChild(this.btn('Réinitialiser cette enquête','Efface les choix sauvegardés.',()=>this.resetRun()));
+      D.screen.appendChild(wrap);
+    });
+  };
+  const oldShowLocked=Game.showLocked.bind(Game);
+  Game.showLocked=function(tape){
+    oldShowLocked(tape);
+    setTimeout(()=>{const txt=document.querySelector('.story-text');if(txt)txt.innerHTML='Cette cassette existe déjà. Elle refuse juste d’être lue.<br><br>Elle ne doit pas être une récompense rapide. Elle doit refléter les vraies routes, les fausses fins, et ce que Dr Mind aura appris à ne plus fuir.<br><br><span class="void">VERROU: TRUE_END_PATCH_REQUIRED · RELATION_MAP_ACTIVE</span>';},40);
+  };
+})();
 
 /* Garden */
 function showGarden(){UI.screenClear();UI.setGlow('rgba(168,230,163,.08)');const g=document.createElement('div');g.className='garden';const sv=document.createElement('div');sv.innerHTML=moutonSVG(120,false,'happy');const t=document.createElement('div');t.className='garden-text';t.innerHTML='Les cinq premières bandes sont archivées.<br>La sixième reste scellée: la vraie fin attend sa mise à jour.';const s=document.createElement('div');s.className='garden-sub';s.textContent='🌱 Rejoue les bandes, chasse les fausses fins, prépare la vérité.';g.appendChild(sv);g.appendChild(t);g.appendChild(s);D.screen.appendChild(g)}
@@ -2856,8 +3186,7 @@ function buildRack(){
    INSERT TAPE
    ═══════════════════════════════════════════════════════════════════ */
 async function insertTape(tape){
-  if(!tape||inserting||!bootDone)return;
-  if(tape.locked||tape.future){Game.showLocked(tape);return}
+  if(!tape?.file||inserting||!bootDone)return;
   inserting=true;
   TapeInteract.clear();
   BgScenes.stop();
